@@ -1,0 +1,7 @@
+(sym_lib_table
+  (lib (name stm32l053c-rescue)(type Legacy)(uri ${KIPRJMOD}/stm32l053c-rescue.lib)(options "")(descr ""))
+  (lib (name stm32)(type Legacy)(uri ${KIPRJMOD}/stm32.lib)(options "")(descr ""))
+  (lib (name adc)(type Legacy)(uri ${KIPRJMOD}/adc.lib)(options "")(descr ""))
+  (lib (name lora)(type Legacy)(uri ${KIPRJMOD}/lora.lib)(options "")(descr ""))
+  (lib (name theapi_voltage_regulators)(type Legacy)(uri ${KIPRJMOD}/theapi_voltage_regulators.lib)(options "")(descr ""))
+)
