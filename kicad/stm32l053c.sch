@@ -198,7 +198,7 @@ U 1 1 580770D7
 P 4200 2700
 F 0 "R1" V 4280 2700 50  0000 C CNN
 F 1 "820" V 4200 2700 50  0000 C CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 4130 2700 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4130 2700 50  0001 C CNN
 F 3 "" H 4200 2700 50  0000 C CNN
 	1    4200 2700
 	0    1    1    0   
@@ -233,7 +233,7 @@ U 1 1 592DD751
 P 2850 5025
 F 0 "U3" H 2250 5475 50  0000 L CNN
 F 1 "ADS1015" H 3100 5475 50  0000 L CNN
-F 2 "Housings_SSOP:TSSOP-10_3x3mm_Pitch0.5mm" H 2800 4975 50  0001 C CNN
+F 2 "Package_SO:TSSOP-10_3x3mm_P0.5mm" H 2800 4975 50  0001 C CNN
 F 3 "" H 1950 5425 50  0001 C CNN
 	1    2850 5025
 	1    0    0    -1  
@@ -508,28 +508,6 @@ F 3 "" H 4050 4225 50  0001 C CNN
 $EndComp
 Text Notes 3175 2525 0    98   ~ 20
 Debug
-$Comp
-L stm32l053c-rescue:Battery BT1
-U 1 1 59319095
-P 1275 1325
-F 0 "BT1" H 1375 1425 50  0000 L CNN
-F 1 "Battery" H 1375 1325 50  0000 L CNN
-F 2 "theapi:BatteryBoxAndPins" V 1275 1385 50  0001 C CNN
-F 3 "" V 1275 1385 50  0001 C CNN
-	1    1275 1325
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:Earth #PWR028
-U 1 1 593290F6
-P 1275 1925
-F 0 "#PWR028" H 1275 1675 50  0001 C CNN
-F 1 "Earth" H 1275 1775 50  0001 C CNN
-F 2 "" H 1275 1925 50  0000 C CNN
-F 3 "" H 1275 1925 50  0000 C CNN
-	1    1275 1925
-	1    0    0    -1  
-$EndComp
 Text GLabel 10625 3800 2    60   Input ~ 0
 RFM_RST
 Text GLabel 4350 6625 2    60   Input ~ 0
@@ -563,34 +541,34 @@ AIN2
 $Comp
 L stm32l053c-rescue:R R9
 U 1 1 59356DA1
-P 2150 1825
-F 0 "R9" V 2230 1825 50  0000 C CNN
-F 1 "100K" V 2150 1825 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2080 1825 50  0001 C CNN
-F 3 "" H 2150 1825 50  0001 C CNN
-	1    2150 1825
+P 2400 1825
+F 0 "R9" V 2480 1825 50  0000 C CNN
+F 1 "100K" V 2400 1825 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2330 1825 50  0001 C CNN
+F 3 "" H 2400 1825 50  0001 C CNN
+	1    2400 1825
 	1    0    0    -1  
 $EndComp
 $Comp
 L stm32l053c-rescue:R R8
 U 1 1 59356E2E
-P 2350 1625
-F 0 "R8" V 2430 1625 50  0000 C CNN
-F 1 "620K" V 2350 1625 50  0000 C CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 2280 1625 50  0001 C CNN
-F 3 "" H 2350 1625 50  0001 C CNN
-	1    2350 1625
+P 2600 1625
+F 0 "R8" V 2680 1625 50  0000 C CNN
+F 1 "620K" V 2600 1625 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2530 1625 50  0001 C CNN
+F 3 "" H 2600 1625 50  0001 C CNN
+	1    2600 1625
 	0    1    1    0   
 $EndComp
 $Comp
 L power:Earth #PWR030
 U 1 1 59357323
-P 2150 1975
-F 0 "#PWR030" H 2150 1725 50  0001 C CNN
-F 1 "Earth" H 2150 1825 50  0001 C CNN
-F 2 "" H 2150 1975 50  0000 C CNN
-F 3 "" H 2150 1975 50  0000 C CNN
-	1    2150 1975
+P 2400 1975
+F 0 "#PWR030" H 2400 1725 50  0001 C CNN
+F 1 "Earth" H 2400 1825 50  0001 C CNN
+F 2 "" H 2400 1975 50  0000 C CNN
+F 3 "" H 2400 1975 50  0000 C CNN
+	1    2400 1975
 	-1   0    0    -1  
 $EndComp
 Text Label 10550 775  1    60   ~ 0
@@ -620,17 +598,6 @@ Text Label 1875 4825 0    60   ~ 0
 AIN0
 Text Label 1900 5225 0    60   ~ 0
 AIN3
-$Comp
-L stm32l053c-rescue:R_Shunt R5
-U 1 1 593784A2
-P 1275 1725
-F 0 "R5" V 1100 1725 50  0000 C CNN
-F 1 "R_Shunt" V 1175 1725 50  0000 C CNN
-F 2 "theapi:SHUNT_1210_HandSoldering" V 1205 1725 50  0001 C CNN
-F 3 "" H 1275 1725 50  0001 C CNN
-	1    1275 1725
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9225 6050 9225 6200
 Wire Wire Line
@@ -816,17 +783,17 @@ Wire Wire Line
 Connection ~ 4350 5025
 Connection ~ 4150 4325
 Wire Wire Line
-	1900 1625 2150 1625
+	2150 1625 2400 1625
 Wire Wire Line
-	2150 1625 2150 1675
-Text Label 1900 1625 0    60   ~ 0
+	2400 1625 2400 1675
+Text Label 2150 1625 0    60   ~ 0
 AIN2
-Connection ~ 2150 1625
-Text Label 1700 1825 2    60   ~ 0
+Connection ~ 2400 1625
+Text Label 1575 1775 2    60   ~ 0
 AIN0
-Text Label 1700 1625 2    60   ~ 0
+Text Label 1575 1475 2    60   ~ 0
 AIN1
-Text Label 1825 1125 0    60   ~ 0
+Text Label 2975 1300 0    60   ~ 0
 BATT
 Wire Wire Line
 	9625 6050 9725 6050
@@ -855,7 +822,7 @@ Wire Wire Line
 Wire Wire Line
 	4150 4325 4350 4325
 Wire Wire Line
-	2150 1625 2200 1625
+	2400 1625 2450 1625
 NoConn ~ 3400 7025
 NoConn ~ 4350 6925
 NoConn ~ 4350 6825
@@ -886,20 +853,6 @@ Wire Wire Line
 	3200 1475 3525 1475
 Wire Wire Line
 	4125 1475 4525 1475
-Wire Wire Line
-	1425 1625 1700 1625
-Wire Wire Line
-	1425 1825 1700 1825
-Connection ~ 3200 1475
-Wire Wire Line
-	1275 1125 2500 1125
-Wire Wire Line
-	3200 1125 3200 1475
-Wire Wire Line
-	2500 1125 2500 1625
-Connection ~ 2500 1125
-Wire Wire Line
-	2500 1125 3200 1125
 Wire Notes Line
 	5075 2125 5075 725 
 Connection ~ 9725 6050
@@ -1114,7 +1067,7 @@ U 1 1 5C27DDBD
 P 1650 5375
 F 0 "R15" V 1730 5375 50  0000 C CNN
 F 1 "100K" V 1650 5375 50  0000 C CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 1580 5375 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1580 5375 50  0001 C CNN
 F 3 "" H 1650 5375 50  0001 C CNN
 	1    1650 5375
 	1    0    0    -1  
@@ -1125,7 +1078,7 @@ U 1 1 5C27DDC4
 P 1500 5225
 F 0 "R14" V 1580 5225 50  0000 C CNN
 F 1 "620K" V 1500 5225 50  0000 C CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 1430 5225 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1430 5225 50  0001 C CNN
 F 3 "" H 1500 5225 50  0001 C CNN
 	1    1500 5225
 	0    1    1    0   
@@ -1147,7 +1100,7 @@ U 1 1 5C280156
 P 1150 5325
 F 0 "J5" H 1044 5000 50  0000 C CNN
 F 1 "AIN3" H 1044 5091 50  0000 C CNN
-F 2 "Connector_JST:JST_XH_B02B-XH-A_1x02_P2.50mm_Vertical" H 1150 5325 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 1150 5325 50  0001 C CNN
 F 3 "~" H 1150 5325 50  0001 C CNN
 	1    1150 5325
 	-1   0    0    1   
@@ -1324,4 +1277,157 @@ Wire Wire Line
 	5875 6150 5875 5775
 Wire Wire Line
 	5875 5775 5900 5775
+$Comp
+L Device:R R5
+U 1 1 5C243ACF
+P 1275 1625
+F 0 "R5" V 1200 1625 50  0000 C CNN
+F 1 "0.01R" V 1350 1625 50  0000 C CNN
+F 2 "Connector_JST:JST_XH_B02B-XH-A_1x02_P2.50mm_Vertical" V 1205 1625 50  0001 C CNN
+F 3 "~" H 1275 1625 50  0001 C CNN
+	1    1275 1625
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+BATT #PWR0101
+U 1 1 5C268BEB
+P 2200 1175
+F 0 "#PWR0101" H 2200 1025 50  0001 C CNN
+F 1 "+BATT" H 2215 1348 50  0000 C CNN
+F 2 "" H 2200 1175 50  0001 C CNN
+F 3 "" H 2200 1175 50  0001 C CNN
+	1    2200 1175
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3200 1300 3200 1475
+Connection ~ 3200 1475
+Wire Wire Line
+	2750 1625 2925 1625
+Wire Wire Line
+	2925 1625 2925 1300
+Wire Wire Line
+	2925 1300 3200 1300
+Wire Wire Line
+	1275 1775 1575 1775
+Wire Wire Line
+	1275 1475 1575 1475
+$Comp
+L Connector:Conn_01x02_Male J7
+U 1 1 5C27E7B1
+P 2000 1175
+F 0 "J7" H 1972 1055 50  0000 R CNN
+F 1 "BATTERY" H 2075 1250 50  0000 R CNN
+F 2 "Connector_JST:JST_XH_B02B-XH-A_1x02_P2.50mm_Vertical" H 2000 1175 50  0001 C CNN
+F 3 "~" H 2000 1175 50  0001 C CNN
+	1    2000 1175
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:Earth #PWR038
+U 1 1 5C2872F9
+P 2200 1275
+F 0 "#PWR038" H 2200 1025 50  0001 C CNN
+F 1 "Earth" H 2200 1125 50  0001 C CNN
+F 2 "" H 2200 1275 50  0000 C CNN
+F 3 "" H 2200 1275 50  0000 C CNN
+	1    2200 1275
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 1175 2925 1175
+Wire Wire Line
+	2925 1175 2925 1300
+Connection ~ 2200 1175
+Connection ~ 2925 1300
+$Comp
+L Mechanical:MountingHole_Pad H1
+U 1 1 5C28F0A3
+P 8825 625
+F 0 "H1" H 8925 676 50  0000 L CNN
+F 1 "MountingHole_Pad" H 8925 585 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 8825 625 50  0001 C CNN
+F 3 "~" H 8825 625 50  0001 C CNN
+	1    8825 625 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:Earth #PWR040
+U 1 1 5C28F4C4
+P 8825 725
+F 0 "#PWR040" H 8825 475 50  0001 C CNN
+F 1 "Earth" H 8825 575 50  0001 C CNN
+F 2 "" H 8825 725 50  0000 C CNN
+F 3 "" H 8825 725 50  0000 C CNN
+	1    8825 725 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H3
+U 1 1 5C28F591
+P 8825 1050
+F 0 "H3" H 8925 1101 50  0000 L CNN
+F 1 "MountingHole_Pad" H 8925 1010 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 8825 1050 50  0001 C CNN
+F 3 "~" H 8825 1050 50  0001 C CNN
+	1    8825 1050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:Earth #PWR042
+U 1 1 5C28F598
+P 8825 1150
+F 0 "#PWR042" H 8825 900 50  0001 C CNN
+F 1 "Earth" H 8825 1000 50  0001 C CNN
+F 2 "" H 8825 1150 50  0000 C CNN
+F 3 "" H 8825 1150 50  0000 C CNN
+	1    8825 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H2
+U 1 1 5C294F15
+P 8525 850
+F 0 "H2" H 8625 901 50  0000 L CNN
+F 1 "MountingHole_Pad" H 8625 810 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 8525 850 50  0001 C CNN
+F 3 "~" H 8525 850 50  0001 C CNN
+	1    8525 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:Earth #PWR041
+U 1 1 5C294F1C
+P 8525 950
+F 0 "#PWR041" H 8525 700 50  0001 C CNN
+F 1 "Earth" H 8525 800 50  0001 C CNN
+F 2 "" H 8525 950 50  0000 C CNN
+F 3 "" H 8525 950 50  0000 C CNN
+	1    8525 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H4
+U 1 1 5C294F22
+P 8525 1275
+F 0 "H4" H 8625 1326 50  0000 L CNN
+F 1 "MountingHole_Pad" H 8625 1235 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 8525 1275 50  0001 C CNN
+F 3 "~" H 8525 1275 50  0001 C CNN
+	1    8525 1275
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:Earth #PWR043
+U 1 1 5C294F29
+P 8525 1375
+F 0 "#PWR043" H 8525 1125 50  0001 C CNN
+F 1 "Earth" H 8525 1225 50  0001 C CNN
+F 2 "" H 8525 1375 50  0000 C CNN
+F 3 "" H 8525 1375 50  0000 C CNN
+	1    8525 1375
+	1    0    0    -1  
+$EndComp
+Text Notes 1075 1875 0    31   Italic 0
+Shunt on low side of the battery
 $EndSCHEMATC
