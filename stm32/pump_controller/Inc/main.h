@@ -79,14 +79,37 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define PUMP_Pin GPIO_PIN_13
+#define PUMP_GPIO_Port GPIOC
+#define WATER_TEMP_Pin GPIO_PIN_0
+#define WATER_TEMP_GPIO_Port GPIOA
+#define WATER_LEVEL_Pin GPIO_PIN_1
+#define WATER_LEVEL_GPIO_Port GPIOA
+#define SENSOR_PWR_Pin GPIO_PIN_4
+#define SENSOR_PWR_GPIO_Port GPIOA
 #define LED_Pin GPIO_PIN_5
 #define LED_GPIO_Port GPIOA
-#define SPI2_CS_Pin GPIO_PIN_12
-#define SPI2_CS_GPIO_Port GPIOB
-#define DIO0_Pin GPIO_PIN_4
+#define DOOR_LED_Pin GPIO_PIN_6
+#define DOOR_LED_GPIO_Port GPIOA
+#define LED_RED_Pin GPIO_PIN_0
+#define LED_RED_GPIO_Port GPIOB
+#define LED_GREEN_Pin GPIO_PIN_1
+#define LED_GREEN_GPIO_Port GPIOB
+#define LED_BLUE_Pin GPIO_PIN_2
+#define LED_BLUE_GPIO_Port GPIOB
+#define DIO0_Pin GPIO_PIN_10
 #define DIO0_GPIO_Port GPIOB
 #define DIO0_EXTI_IRQn EXTI4_15_IRQn
-#define ADC_RDY_Pin GPIO_PIN_9
+#define RFM_RESET_Pin GPIO_PIN_11
+#define RFM_RESET_GPIO_Port GPIOB
+#define SPI2_CS_Pin GPIO_PIN_12
+#define SPI2_CS_GPIO_Port GPIOB
+#define MOTION_Pin GPIO_PIN_11
+#define MOTION_GPIO_Port GPIOA
+#define DOOR_Pin GPIO_PIN_12
+#define DOOR_GPIO_Port GPIOA
+#define DOOR_EXTI_IRQn EXTI4_15_IRQn
+#define ADC_RDY_Pin GPIO_PIN_5
 #define ADC_RDY_GPIO_Port GPIOB
 #define ADC_RDY_EXTI_IRQn EXTI4_15_IRQn
 /* USER CODE BEGIN Private defines */
