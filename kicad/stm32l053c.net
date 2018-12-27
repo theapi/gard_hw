@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/peter/repos/gard_hw/kicad/stm32l053c.sch)
-    (date "Thu 27 Dec 2018 18:29:03 GMT")
+    (date "Thu 27 Dec 2018 19:03:04 GMT")
     (tool "Eeschema 5.0.2-bee76a0~70~ubuntu18.04.1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -65,7 +65,7 @@
       (tstamp 592DE199))
     (comp (ref U3)
       (value ADS1015)
-      (footprint Package_SO:TSSOP-10_3x3mm_P0.5mm)
+      (footprint theapi:TSSOP-10_3x3mm_P0.5mm)
       (libsource (lib adc) (part ADS1015) (description ""))
       (sheetpath (names /) (tstamps /))
       (tstamp 592DD751))

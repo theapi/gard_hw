@@ -1646,4 +1646,7 @@ Wire Wire Line
 	4925 2775 4925 2900
 Wire Wire Line
 	4350 1475 4350 1075
+Wire Wire Line
+	3525 1475 3450 1475
+Connection ~ 3450 1475
 $EndSCHEMATC

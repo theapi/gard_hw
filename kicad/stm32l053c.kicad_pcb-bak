@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 39)
+    (drawings 37)
     (tracks 233)
     (zones 0)
     (modules 58)
@@ -2833,12 +2833,6 @@
     (arrow1b (pts (xy 85 30) (xy 86.126504 30.586421)))
     (arrow2a (pts (xy 175 30) (xy 173.873496 29.413579)))
     (arrow2b (pts (xy 175 30) (xy 173.873496 30.586421)))
-  )
-  (gr_text GND (at 203.2 104.14) (layer F.SilkS)
-    (effects (font (size 0.8 0.8) (thickness 0.15)))
-  )
-  (gr_text GND (at 193.04 104.14) (layer B.SilkS)
-    (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror))
   )
   (gr_text 3V3 (at 159 53.9) (layer B.SilkS)
     (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror))
