@@ -515,34 +515,34 @@ $EndComp
 $Comp
 L stm32l053c-rescue:R R9
 U 1 1 59356DA1
-P 1800 5375
-F 0 "R9" V 1880 5375 50  0000 C CNN
-F 1 "100K" V 1800 5350 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1730 5375 50  0001 C CNN
-F 3 "" H 1800 5375 50  0001 C CNN
-	1    1800 5375
+P 1600 5175
+F 0 "R9" V 1680 5175 50  0000 C CNN
+F 1 "100K" V 1600 5150 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1530 5175 50  0001 C CNN
+F 3 "" H 1600 5175 50  0001 C CNN
+	1    1600 5175
 	1    0    0    -1  
 $EndComp
 $Comp
 L stm32l053c-rescue:R R8
 U 1 1 59356E2E
-P 1575 5150
-F 0 "R8" V 1655 5150 50  0000 C CNN
-F 1 "620K" V 1575 5150 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1505 5150 50  0001 C CNN
-F 3 "" H 1575 5150 50  0001 C CNN
-	1    1575 5150
+P 1450 4825
+F 0 "R8" V 1530 4825 50  0000 C CNN
+F 1 "620K" V 1450 4825 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1380 4825 50  0001 C CNN
+F 3 "" H 1450 4825 50  0001 C CNN
+	1    1450 4825
 	0    1    1    0   
 $EndComp
 $Comp
 L power:Earth #PWR030
 U 1 1 59357323
-P 1800 5525
-F 0 "#PWR030" H 1800 5275 50  0001 C CNN
-F 1 "Earth" H 1800 5375 50  0001 C CNN
-F 2 "" H 1800 5525 50  0000 C CNN
-F 3 "" H 1800 5525 50  0000 C CNN
-	1    1800 5525
+P 1600 5325
+F 0 "#PWR030" H 1600 5075 50  0001 C CNN
+F 1 "Earth" H 1600 5175 50  0001 C CNN
+F 2 "" H 1600 5325 50  0000 C CNN
+F 3 "" H 1600 5325 50  0000 C CNN
+	1    1600 5325
 	-1   0    0    -1  
 $EndComp
 Text Label 10550 775  1    60   ~ 0
@@ -566,10 +566,8 @@ F 3 "" H 10850 1075 50  0000 C CNN
 	1    10850 1075
 	1    0    0    -1  
 $EndComp
-Text Label 2025 4925 0    60   ~ 0
-AIN1
-Text Label 2025 4825 0    60   ~ 0
-AIN0
+Text Label 2100 4825 2    60   ~ 0
+BATT_V
 Text Label 2050 5225 0    60   ~ 0
 AIN3
 Wire Wire Line
@@ -670,10 +668,6 @@ Wire Notes Line
 Wire Wire Line
 	8325 4900 8675 4900
 Wire Wire Line
-	2025 4825 2300 4825
-Wire Wire Line
-	2025 4925 2300 4925
-Wire Wire Line
 	2050 6600 2050 6425
 Wire Wire Line
 	2050 6425 1975 6425
@@ -739,10 +733,6 @@ Wire Wire Line
 	4500 4625 4500 5025
 Connection ~ 4500 5025
 Connection ~ 4300 4325
-Text Label 1800 4550 2    60   ~ 0
-AIN0
-Text Label 1800 4250 2    60   ~ 0
-AIN1
 Text Label 2875 1350 0    60   ~ 0
 BATT
 Wire Wire Line
@@ -792,7 +782,7 @@ F 3 "~" H 6500 2125 50  0001 C CNN
 	1    6500 2125
 	1    0    0    -1  
 $EndComp
-Text GLabel 1725 4900 0    60   Input ~ 0
+Text GLabel 2300 4925 0    60   Input ~ 0
 WATER_TEMP
 Text GLabel 10625 4800 2    60   Input ~ 0
 PUMP
@@ -1507,8 +1497,6 @@ Connection ~ 3675 1475
 Wire Wire Line
 	3675 1925 4050 1925
 Connection ~ 3675 1925
-Wire Wire Line
-	1950 5125 2300 5125
 NoConn ~ 8675 2700
 Wire Wire Line
 	3075 1475 3325 1475
@@ -1525,21 +1513,8 @@ F 3 "~" H 2775 1500 50  0001 C CNN
 	1    2775 1500
 	0    1    1    0   
 $EndComp
-Text Label 1125 5150 0    60   ~ 0
+Text Label 1050 4825 0    60   ~ 0
 BATT
-Wire Wire Line
-	1725 4900 1950 4900
-Wire Wire Line
-	1950 4900 1950 5125
-Wire Wire Line
-	1800 5150 1800 5225
-Wire Wire Line
-	1800 5225 2300 5225
-Wire Wire Line
-	1725 5150 1800 5150
-Wire Wire Line
-	1125 5150 1425 5150
-Connection ~ 1800 5225
 $Comp
 L Device:Varistor RV1
 U 1 1 5C2A57EF
@@ -1599,4 +1574,21 @@ Wire Wire Line
 	3100 1925 3325 1925
 Connection ~ 2775 1900
 Connection ~ 3325 1925
+Text Label 1800 4250 2    60   ~ 0
+AIN2
+Text Label 1800 4550 2    60   ~ 0
+AIN3
+Wire Wire Line
+	2050 5225 2300 5225
+Text Label 2050 5125 0    60   ~ 0
+AIN2
+Wire Wire Line
+	2300 5125 2050 5125
+Wire Wire Line
+	1300 4825 1050 4825
+Wire Wire Line
+	1600 4825 1600 5025
+Wire Wire Line
+	1600 4825 2300 4825
+Connection ~ 1600 4825
 $EndSCHEMATC
