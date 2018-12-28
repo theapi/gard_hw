@@ -233,7 +233,7 @@ U 1 1 592DD751
 P 2850 5025
 F 0 "U3" H 2250 5475 50  0000 L CNN
 F 1 "ADS1015" H 3100 5475 50  0000 L CNN
-F 2 "Package_SO:TSSOP-10_3x3mm_P0.5mm" H 2800 4975 50  0001 C CNN
+F 2 "theapi:TSSOP-10_3x3mm_P0.5mm" H 2800 4975 50  0001 C CNN
 F 3 "" H 1950 5425 50  0001 C CNN
 	1    2850 5025
 	1    0    0    -1  
@@ -523,8 +523,6 @@ F 3 "" H 1725 6425 60  0001 C CNN
 	1    1725 6425
 	1    0    0    -1  
 $EndComp
-Text Label 1900 5125 0    60   ~ 0
-AIN2
 $Comp
 L stm32l053c-rescue:R R9
 U 1 1 59356DA1
@@ -695,8 +693,6 @@ Wire Wire Line
 Wire Wire Line
 	1300 6425 1375 6425
 Wire Wire Line
-	1900 5125 2150 5125
-Wire Wire Line
 	9525 1675 9525 1800
 Wire Wire Line
 	9625 1800 9625 2400
@@ -761,7 +757,7 @@ Wire Wire Line
 Wire Wire Line
 	2200 1625 2200 1675
 Text Label 1950 1625 0    60   ~ 0
-AIN2
+AIN3
 Connection ~ 2200 1625
 Text Label 1850 4525 2    60   ~ 0
 AIN0
@@ -822,7 +818,7 @@ F 3 "~" H 6250 2025 50  0001 C CNN
 	1    6250 2025
 	1    0    0    -1  
 $EndComp
-Text GLabel 8675 2700 0    60   Input ~ 0
+Text GLabel 1800 5125 0    60   Input ~ 0
 WATER_TEMP
 Text GLabel 10625 4800 2    60   Input ~ 0
 PUMP
@@ -907,7 +903,7 @@ WATER_LEVEL
 Wire Wire Line
 	5875 1050 6050 1050
 Connection ~ 6050 1050
-Text GLabel 8675 2800 0    60   Input ~ 0
+Text GLabel 8675 4200 0    60   Input ~ 0
 WATER_LEVEL
 $Comp
 L Device:R R6
@@ -994,60 +990,6 @@ $EndComp
 Text GLabel 5950 6950 2    60   Input ~ 0
 PUMP
 Connection ~ 2850 4225
-$Comp
-L stm32l053c-rescue:R R15
-U 1 1 5C27DDBD
-P 1650 5375
-F 0 "R15" V 1730 5375 50  0000 C CNN
-F 1 "100K" V 1650 5375 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1580 5375 50  0001 C CNN
-F 3 "" H 1650 5375 50  0001 C CNN
-	1    1650 5375
-	1    0    0    -1  
-$EndComp
-$Comp
-L stm32l053c-rescue:R R14
-U 1 1 5C27DDC4
-P 1500 5225
-F 0 "R14" V 1580 5225 50  0000 C CNN
-F 1 "620K" V 1500 5225 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1430 5225 50  0001 C CNN
-F 3 "" H 1500 5225 50  0001 C CNN
-	1    1500 5225
-	0    1    1    0   
-$EndComp
-$Comp
-L power:Earth #PWR036
-U 1 1 5C27DDCB
-P 1450 5525
-F 0 "#PWR036" H 1450 5275 50  0001 C CNN
-F 1 "Earth" H 1450 5375 50  0001 C CNN
-F 2 "" H 1450 5525 50  0000 C CNN
-F 3 "" H 1450 5525 50  0000 C CNN
-	1    1450 5525
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x02_Female J5
-U 1 1 5C280156
-P 1150 5325
-F 0 "J5" H 1044 5000 50  0000 C CNN
-F 1 "AIN3" H 1044 5091 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 1150 5325 50  0001 C CNN
-F 3 "~" H 1150 5325 50  0001 C CNN
-	1    1150 5325
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	1350 5325 1350 5525
-Wire Wire Line
-	1350 5525 1450 5525
-Wire Wire Line
-	1650 5525 1450 5525
-Connection ~ 1450 5525
-Wire Wire Line
-	1650 5225 2150 5225
-Connection ~ 1650 5225
 Text GLabel 6650 4550 2    60   Input ~ 0
 DOOR_LED
 $Comp
@@ -1177,7 +1119,7 @@ NoConn ~ 8675 3400
 NoConn ~ 8675 3500
 NoConn ~ 8675 3600
 NoConn ~ 8675 3700
-NoConn ~ 8675 4200
+NoConn ~ 8675 2800
 $Comp
 L Device:LED_CRGB D2
 U 1 1 5C2DD405
@@ -1649,4 +1591,12 @@ Wire Wire Line
 Wire Wire Line
 	3525 1475 3450 1475
 Connection ~ 3450 1475
+Wire Wire Line
+	3450 1925 3825 1925
+Connection ~ 3450 1925
+Wire Wire Line
+	1900 5225 2150 5225
+Wire Wire Line
+	1800 5125 2150 5125
+NoConn ~ 8675 2700
 $EndSCHEMATC
