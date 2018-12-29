@@ -784,7 +784,7 @@ F 3 "~" H 6500 2125 50  0001 C CNN
 $EndComp
 Text GLabel 2300 4925 0    60   Input ~ 0
 WATER_TEMP
-Text GLabel 10625 4800 2    60   Input ~ 0
+Text GLabel 8675 3300 0    60   Input ~ 0
 PUMP
 Text GLabel 8675 3900 0    60   Input ~ 0
 DOOR
@@ -999,7 +999,7 @@ Text GLabel 5875 950  0    60   Input ~ 0
 SENSOR_PWR
 Wire Wire Line
 	5875 950  6050 950 
-Text GLabel 8675 3300 0    60   Input ~ 0
+Text GLabel 10625 4800 2    60   Input ~ 0
 DOOR_LED
 $Comp
 L Device:R R16
