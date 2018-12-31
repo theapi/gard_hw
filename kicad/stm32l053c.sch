@@ -421,23 +421,23 @@ Max 16v
 $Comp
 L stm32l053c-rescue:C C5
 U 1 1 59302470
-P 4000 1625
-F 0 "C5" H 4025 1725 50  0000 L CNN
-F 1 "1uf" H 4025 1525 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4038 1475 50  0001 C CNN
-F 3 "" H 4000 1625 50  0001 C CNN
-	1    4000 1625
+P 4000 1850
+F 0 "C5" H 4025 1950 50  0000 L CNN
+F 1 "1uf" H 4025 1750 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4038 1700 50  0001 C CNN
+F 3 "" H 4000 1850 50  0001 C CNN
+	1    4000 1850
 	1    0    0    -1  
 $EndComp
 $Comp
 L stm32l053c-rescue:C C6
 U 1 1 5930294B
-P 4900 1625
-F 0 "C6" H 4925 1725 50  0000 L CNN
-F 1 "1uf" H 4925 1525 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4938 1475 50  0001 C CNN
-F 3 "" H 4900 1625 50  0001 C CNN
-	1    4900 1625
+P 4900 1850
+F 0 "C6" H 4925 1950 50  0000 L CNN
+F 1 "1uf" H 4925 1750 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4938 1700 50  0001 C CNN
+F 3 "" H 4900 1850 50  0001 C CNN
+	1    4900 1850
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -594,7 +594,7 @@ Wire Wire Line
 Wire Wire Line
 	1675 6975 1450 6975
 Wire Notes Line
-	975  725  5075 725 
+	975  575  5075 575 
 Wire Notes Line
 	975  2275 975  3675
 Wire Notes Line
@@ -623,10 +623,10 @@ Wire Wire Line
 Wire Wire Line
 	3700 5025 4500 5025
 Wire Wire Line
-	4000 1925 4000 1775
+	4000 2150 4000 2000
 Wire Wire Line
-	4900 1925 4900 1775
-Connection ~ 4375 1925
+	4900 2150 4900 2000
+Connection ~ 4375 2150
 Wire Wire Line
 	3000 4225 3800 4225
 Wire Wire Line
@@ -635,8 +635,6 @@ Wire Wire Line
 	4200 4325 4200 4225
 Wire Notes Line
 	3075 3675 5075 3675
-Wire Notes Line
-	975  725  975  2125
 Wire Notes Line
 	2925 2275 2925 3675
 Wire Notes Line
@@ -717,7 +715,7 @@ F 3 "" H 5475 2150 50  0000 C CNN
 	1    5475 2150
 	1    0    0    -1  
 $EndComp
-Connection ~ 4900 1475
+Connection ~ 4900 1700
 $Comp
 L stm32l053c-rescue:R R10
 U 1 1 59492AEA
@@ -769,7 +767,7 @@ USART2_TX
 Text GLabel 8675 3000 0    60   Input ~ 0
 USART2_RX
 Wire Wire Line
-	4375 1775 4375 1925
+	4375 2000 4375 2150
 Connection ~ 9725 6050
 $Comp
 L Connector:Conn_01x03_Female J2
@@ -1310,12 +1308,12 @@ Connection ~ 3225 3000
 $Comp
 L Regulator_Linear:MCP1703A-5002_SOT223 U1
 U 1 1 5C257B3B
-P 4375 1475
-F 0 "U1" H 4375 1717 50  0000 C CNN
-F 1 "MCP1703A-5002_SOT223" H 4375 1626 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 4375 1675 50  0001 C CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20005122B.pdf" H 4375 1425 50  0001 C CNN
-	1    4375 1475
+P 4375 1700
+F 0 "U1" H 4375 1942 50  0000 C CNN
+F 1 "MCP1703A-5002_SOT223" H 4375 1851 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 4375 1900 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20005122B.pdf" H 4375 1650 50  0001 C CNN
+	1    4375 1700
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1342,14 +1340,12 @@ F 3 "" H 3225 2825 50  0001 C CNN
 $EndComp
 Text Notes 3725 2425 0    59   Italic 12
 3V3
-Text Notes 3950 950  0    59   Italic 12
+Text Notes 3400 925  0    59   Italic 12
 5V
 Wire Notes Line
 	975  2125 3075 2125
 Wire Notes Line
 	3075 2125 3075 3675
-Wire Notes Line
-	5075 725  5075 3675
 $Comp
 L power:+5V #PWR039
 U 1 1 5C25F4FD
@@ -1372,23 +1368,12 @@ F 3 "" H 6050 4100 50  0001 C CNN
 	1    6050 4100
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:CP C12
-U 1 1 5C265527
-P 3650 1625
-F 0 "C12" H 3768 1671 50  0000 L CNN
-F 1 "CP" H 3768 1580 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 3688 1475 50  0001 C CNN
-F 3 "~" H 3650 1625 50  0001 C CNN
-	1    3650 1625
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	4000 1475 3650 1475
+	4000 1700 3650 1700
 Wire Wire Line
-	3650 1775 3650 1925
+	3650 2000 3650 2150
 Wire Wire Line
-	3650 1925 4000 1925
+	3650 2150 4000 2150
 $Comp
 L Connector:Conn_01x02_Female J6
 U 1 1 5C27EC4B
@@ -1462,9 +1447,9 @@ F 3 "" H 2550 1900 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	4375 1925 4900 1925
+	4375 2150 4900 2150
 Wire Wire Line
-	4675 1475 4900 1475
+	4675 1700 4900 1700
 $Comp
 L Device:Polyfuse F1
 U 1 1 5C2B8F07
@@ -1476,7 +1461,6 @@ F 3 "~" H 1675 1350 50  0001 C CNN
 	1    1675 1350
 	0    1    1    0   
 $EndComp
-Connection ~ 3650 1475
 Wire Wire Line
 	4150 3000 4350 3000
 Connection ~ 4350 3000
@@ -1486,16 +1470,12 @@ Connection ~ 4350 3450
 Wire Wire Line
 	4350 3000 4350 2475
 Wire Wire Line
-	4900 1475 4900 1075
+	4075 1700 4000 1700
+Connection ~ 4000 1700
 Wire Wire Line
-	4075 1475 4000 1475
-Connection ~ 4000 1475
-Wire Wire Line
-	4000 1925 4375 1925
-Connection ~ 4000 1925
+	4000 2150 4375 2150
+Connection ~ 4000 2150
 NoConn ~ 8675 2700
-Wire Wire Line
-	3575 1475 3650 1475
 $Comp
 L Device:D_Zener D3
 U 1 1 5C279215
@@ -1524,10 +1504,6 @@ Connection ~ 3100 1350
 Wire Wire Line
 	3100 1350 3275 1350
 Connection ~ 3275 1350
-Wire Wire Line
-	3575 1350 3575 1475
-Wire Wire Line
-	3275 1350 3575 1350
 Wire Wire Line
 	5475 2300 5475 2525
 Wire Wire Line
@@ -1560,14 +1536,6 @@ Wire Wire Line
 	1425 1450 1425 1900
 Wire Wire Line
 	1425 1900 2550 1900
-Wire Wire Line
-	3275 1900 3600 1900
-Wire Wire Line
-	3600 1900 3600 1925
-Wire Wire Line
-	3600 1925 3650 1925
-Connection ~ 3275 1900
-Connection ~ 3650 1925
 Text Label 1800 4250 2    60   ~ 0
 AIN2
 Text Label 1800 4550 2    60   ~ 0
@@ -1607,4 +1575,75 @@ Wire Wire Line
 	2275 1250 2275 1350
 Wire Wire Line
 	2275 1350 2350 1350
+$Comp
+L Regulator_Linear:LM7805_TO220 U7
+U 1 1 5C2A2D54
+P 4375 850
+F 0 "U7" H 4225 575 50  0000 C CNN
+F 1 "LP2954_TO220" H 4375 1001 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 4375 1075 50  0001 C CIN
+F 3 "http://www.fairchildsemi.com/ds/LM/LM7805.pdf" H 4375 800 50  0001 C CNN
+	1    4375 850 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4075 850  4000 850 
+Wire Wire Line
+	4000 850  4000 1700
+$Comp
+L power:Earth #PWR012
+U 1 1 5C2B142D
+P 4375 1150
+F 0 "#PWR012" H 4375 900 50  0001 C CNN
+F 1 "Earth" H 4375 1000 50  0001 C CNN
+F 2 "" H 4375 1150 50  0000 C CNN
+F 3 "" H 4375 1150 50  0000 C CNN
+	1    4375 1150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 1075 4900 1150
+Wire Wire Line
+	4675 850  4675 1150
+Wire Wire Line
+	4675 1150 4900 1150
+Connection ~ 4900 1150
+Wire Wire Line
+	4900 1150 4900 1700
+Wire Notes Line
+	5075 575  5075 3675
+Wire Notes Line
+	975  575  975  2125
+Wire Notes Line
+	3800 650  3800 1350
+Wire Notes Line
+	3800 1350 5025 1350
+Wire Notes Line
+	5025 1350 5025 650 
+Wire Notes Line
+	3800 650  5025 650 
+Text Notes 3950 1325 0    60   Italic 0
+Alternative Regulator
+Connection ~ 3650 1700
+$Comp
+L Device:CP C12
+U 1 1 5C265527
+P 3650 1850
+F 0 "C12" H 3768 1896 50  0000 L CNN
+F 1 "CP" H 3768 1805 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 3688 1700 50  0001 C CNN
+F 3 "~" H 3650 1850 50  0001 C CNN
+	1    3650 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3275 1900 3275 2150
+Wire Wire Line
+	3275 2150 3650 2150
+Connection ~ 3275 1900
+Connection ~ 3650 2150
+Wire Wire Line
+	3275 1350 3650 1350
+Wire Wire Line
+	3650 1350 3650 1700
 $EndSCHEMATC
