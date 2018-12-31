@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 43)
+    (drawings 45)
     (tracks 580)
     (zones 0)
     (modules 60)
@@ -3013,6 +3013,12 @@
     (fp_line (start 2.575 -21.95) (end 3.3 -20.725) (layer B.SilkS) (width 0.15))
   )
 
+  (gr_text "Garden\nAnimal\nRepellent\nDevice" (at 165.25 72.25) (layer B.SilkS) (tstamp 5C369E53)
+    (effects (font (size 5 4) (thickness 1)) (justify left mirror))
+  )
+  (gr_text G.A.R.D. (at 149 95) (layer F.SilkS)
+    (effects (font (size 5 4) (thickness 1)))
+  )
   (gr_text "Alternate 5V\nregulator" (at 118.8 86.4) (layer F.SilkS) (tstamp 5C361B8A)
     (effects (font (size 0.8 0.8) (thickness 0.15)) (justify right))
   )
