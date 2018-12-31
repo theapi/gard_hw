@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/peter/repos/gard_hw/kicad/stm32l053c.sch)
-    (date "Mon 31 Dec 2018 09:18:18 GMT")
+    (date "Mon 31 Dec 2018 10:08:17 GMT")
     (tool "Eeschema 5.0.2-bee76a0~70~ubuntu16.04.1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -319,7 +319,7 @@
       (tstamp 5C2542B2))
     (comp (ref U1)
       (value MCP1703A-5002_SOT223)
-      (footprint Package_TO_SOT_SMD:SOT-223-3_TabPin2)
+      (footprint theapi:SOT-223-3_TabPin2_heatsink)
       (datasheet http://ww1.microchip.com/downloads/en/DeviceDoc/20005122B.pdf)
       (libsource (lib Regulator_Linear) (part MCP1703A-5002_SOT223) (description "Low Quiescent Current LDO Regulator, 5.0V, 250 mA, Vin<=16V, SOT-223"))
       (sheetpath (names /) (tstamps /))
