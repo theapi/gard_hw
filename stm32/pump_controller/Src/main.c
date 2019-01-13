@@ -50,6 +50,11 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "string.h"
+#include "stdio.h"
+
+#include "battery.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -59,6 +64,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+
+#define TXBUFFERSIZE 128
 
 /* USER CODE END PD */
 
@@ -82,6 +89,11 @@ static void MX_NVIC_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+/* Buffer used for debug UART */
+char tx_buffer[TXBUFFERSIZE];
+/* tmp */
+uint8_t msg_id = 0;
 
 /* USER CODE END 0 */
 
@@ -124,6 +136,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   HAL_GPIO_WritePin(GPIOA, LED_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOA, LED_Pin, DOOR_LED_Pin);
   HAL_GPIO_WritePin(GPIOB, LED_RED_Pin, GPIO_PIN_RESET);
   HAL_GPIO_WritePin(GPIOB, LED_GREEN_Pin, GPIO_PIN_RESET);
   HAL_GPIO_WritePin(GPIOB, LED_BLUE_Pin, GPIO_PIN_RESET);
@@ -138,20 +151,38 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
+	  // Send data to debug UART.
+	  uint16_t batt = BATTERY_Mv();
+		int tx_len = snprintf(
+		  tx_buffer,
+		  TXBUFFERSIZE,
+		  "msg_id:%d, batt:%u\n",
+		  msg_id++,
+		  batt
+		);
+		// Blocking UART.
+		HAL_UART_Transmit(&huart2, (uint8_t *)tx_buffer, tx_len, 500);
+
 	  HAL_Delay(500);
 	  HAL_GPIO_TogglePin(GPIOA, LED_Pin);
+	  HAL_GPIO_TogglePin(GPIOA, DOOR_LED_Pin);
+
 	  HAL_GPIO_WritePin(GPIOB, LED_RED_Pin, GPIO_PIN_SET);
 	  HAL_GPIO_WritePin(GPIOB, LED_GREEN_Pin, GPIO_PIN_RESET);
 	  HAL_GPIO_WritePin(GPIOB, LED_BLUE_Pin, GPIO_PIN_RESET);
 
 	  HAL_Delay(500);
 	  HAL_GPIO_TogglePin(GPIOA, LED_Pin);
+	  HAL_GPIO_TogglePin(GPIOA, DOOR_LED_Pin);
+
 	  HAL_GPIO_WritePin(GPIOB, LED_RED_Pin, GPIO_PIN_RESET);
 	  HAL_GPIO_WritePin(GPIOB, LED_GREEN_Pin, GPIO_PIN_SET);
 	  HAL_GPIO_WritePin(GPIOB, LED_BLUE_Pin, GPIO_PIN_RESET);
 
 	  HAL_Delay(500);
 	  HAL_GPIO_TogglePin(GPIOA, LED_Pin);
+	  HAL_GPIO_TogglePin(GPIOA, DOOR_LED_Pin);
+
 	  HAL_GPIO_WritePin(GPIOB, LED_RED_Pin, GPIO_PIN_RESET);
 	  HAL_GPIO_WritePin(GPIOB, LED_GREEN_Pin, GPIO_PIN_RESET);
 	  HAL_GPIO_WritePin(GPIOB, LED_BLUE_Pin, GPIO_PIN_SET);
