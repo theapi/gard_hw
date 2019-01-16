@@ -175,7 +175,6 @@ int main(void)
 
 
 		  HAL_GPIO_TogglePin(GPIOA, LED_Pin);
-		  HAL_GPIO_TogglePin(GPIOA, DOOR_LED_Pin);
 	  }
 
 	  if (HAL_GPIO_ReadPin(GPIOA, MOTION_Pin)) {
@@ -191,9 +190,9 @@ int main(void)
 	  }
 
 	  if (HAL_GPIO_ReadPin(DOOR_GPIO_Port, DOOR_Pin)) {
-		  HAL_GPIO_WritePin(GPIOB, LED_BLUE_Pin, GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(GPIOA, DOOR_LED_Pin, GPIO_PIN_SET);
 	  } else {
-		  HAL_GPIO_WritePin(GPIOB, LED_BLUE_Pin, GPIO_PIN_RESET);
+		  HAL_GPIO_WritePin(GPIOA, DOOR_LED_Pin, GPIO_PIN_RESET);
 	  }
 
 //	  HAL_GPIO_WritePin(GPIOB, LED_RED_Pin, GPIO_PIN_SET);
