@@ -31,15 +31,6 @@ uint16_t BATTERY_Mv() {
     return (int) mV;
 }
 
-uint16_t BATTERY_ChargeMv() {
-	/*
-	 * Ready the battery again on another channel - dbugging.
-	 */
-    uint16_t val = ADS1015_SingleEnded(&hi2c1, ADS1015_ADDRESS, 1, ADS1015_GAIN_ONE);
-    float mV = (float)val * 14.084507042;
-    return (int) mV;
-}
-
 int16_t BATTERY_ChargeMa() {
 	/*
 	 * 16x gain

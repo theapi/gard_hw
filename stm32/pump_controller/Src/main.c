@@ -54,6 +54,7 @@
 #include "stdio.h"
 
 #include "battery.h"
+#include "water.h"
 
 /* USER CODE END Includes */
 
@@ -159,13 +160,15 @@ int main(void)
 		  last_blink = now;
 
 		  // Send data to debug UART.
+		  uint16_t water_temperature = WATER_Temperature();
 		  uint16_t batt = BATTERY_Mv();
 			int tx_len = snprintf(
 			  tx_buffer,
 			  TXBUFFERSIZE,
-			  "msg_id:%d, batt:%u\n",
+			  "msg_id:%d, batt:%u, temp:%u\n",
 			  msg_id++,
-			  batt
+			  batt,
+			  water_temperature
 			);
 			// Blocking UART.
 			HAL_UART_Transmit(&huart2, (uint8_t *)tx_buffer, tx_len, 500);

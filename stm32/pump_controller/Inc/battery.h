@@ -15,11 +15,6 @@
  uint16_t BATTERY_Mv();
 
  /**
-  * Millivolts on the battery due to charging.
-  */
- uint16_t BATTERY_ChargeMv();
-
- /**
   * Current into the battery due to charging.
   */
  int16_t BATTERY_ChargeMa();
