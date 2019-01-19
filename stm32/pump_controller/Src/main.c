@@ -96,6 +96,7 @@ char tx_buffer[TXBUFFERSIZE];
 uint32_t last_blink = 0;
 /* tmp */
 uint8_t msg_id = 0;
+uint16_t water_temperature = 0;
 
 /* USER CODE END 0 */
 
@@ -145,6 +146,9 @@ int main(void)
   HAL_GPIO_WritePin(GPIOB, LED_GREEN_Pin, GPIO_PIN_RESET);
   HAL_GPIO_WritePin(GPIOB, LED_BLUE_Pin, GPIO_PIN_RESET);
 
+  HAL_GPIO_WritePin(GPIOA, PUMP_Pin, GPIO_PIN_SET);
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -155,12 +159,13 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
+
 	  uint32_t now = HAL_GetTick();
 	  if (now - last_blink >= 1000) {
 		  last_blink = now;
 
 		  // Send data to debug UART.
-		  uint16_t water_temperature = WATER_Temperature();
+		  water_temperature = WATER_Temperature();
 		  uint16_t batt = BATTERY_Mv();
 			int tx_len = snprintf(
 			  tx_buffer,
@@ -184,6 +189,12 @@ int main(void)
 	  }
 
 	  if (HAL_GPIO_ReadPin(GPIOA, WATER_LEVEL_Pin)) {
+		  HAL_GPIO_WritePin(GPIOB, LED_BLUE_Pin, GPIO_PIN_SET);
+	  } else {
+		  HAL_GPIO_WritePin(GPIOB, LED_BLUE_Pin, GPIO_PIN_RESET);
+	  }
+
+	  if (water_temperature > 1600) {
 		  HAL_GPIO_WritePin(GPIOB, LED_GREEN_Pin, GPIO_PIN_SET);
 	  } else {
 		  HAL_GPIO_WritePin(GPIOB, LED_GREEN_Pin, GPIO_PIN_RESET);
