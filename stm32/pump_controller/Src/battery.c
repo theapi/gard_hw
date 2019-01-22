@@ -13,21 +13,27 @@ uint16_t BATTERY_Mv() {
      * 1x gain   +/- 4.096V  1 bit = 2mv
      * Battery is measured via a voltage divider = 620 / 100
      *
-     * 1x gain:
-     *   1v  = 71 bits = 142mV
-     *   2v  = 141 bits = 282mV
-     *   3v  = 213 bits = 426mV
-     *   15V = 1065 bits = 2130mV
+     * Calibration:
+     *   12000mV = 835 bits
+     *   1 bit = 12000/835 = 14.371257485mV on the battery
      *
-     *   1000 / 71 = 14.084507042
-     *   so 1 bit = 14.084507042 mV on the battery.
-     *   .. 1065 bits = 1065 * 14.084507042 = 15V
+     *
+     * Gain calculation:
+     *   1000mV ~= 69.583333333 bits ~= 140mV on adc
+     *   14500mV ~= 1008.958333329 bits ~= 2018mV on adc so
+     *   15000mV ~= 1043.749999995 bits ~= 2088mV on adc so need gain one for 15V.
+     *
+     * Calibration for 2x gain:
+     *   12000mV = 1668 bits
+     *   1 bit = 12000/1668 = 7.194244604 mV on the battery
+     *
      */
-    uint16_t val = ADS1015_SingleEnded(&hi2c1, ADS1015_ADDRESS, 0, ADS1015_GAIN_ONE);
+    uint16_t val = ADS1015_SingleEnded(&hi2c1, ADS1015_ADDRESS, 0, ADS1015_GAIN_TWO);
+
     /*
-     * Multiply val by 14.084507042 to get the real mV before the voltage divider & gain.
+     * Multiply val by 7.194244604 to get the real mV before the voltage divider & gain.
      */
-    float mV = (float)val * 14.084507042;
+    float mV = (float)val * 7.194244604;
     return (int) mV;
 }
 
