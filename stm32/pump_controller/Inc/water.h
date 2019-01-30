@@ -23,7 +23,7 @@
  /**
   * Temperature of the water.
   */
- uint16_t WATER_Temperature();
+ int16_t WATER_Temperature();
 
  float Temperature(int val,float B,float T0,float R0,float R_Balance);
 

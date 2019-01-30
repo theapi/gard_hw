@@ -6,7 +6,7 @@
 extern I2C_HandleTypeDef hi2c1;
 
 
-uint16_t WATER_Temperature() {
+int16_t WATER_Temperature() {
 	/*
 	 * 1x gain   +/- 4.096V  1 bit = 2mv
 	 * 2x gain   +/- 2.048V  1 bit = 1mV
@@ -49,7 +49,8 @@ uint16_t WATER_Temperature() {
 	  steinhart = 1.0 / steinhart;                 // Invert
 	  steinhart -= 273.15;                         // convert to C
 
-	  return round(steinhart);
+	  int16_t deg = round(steinhart);
+	  return deg;
 
 
     /*

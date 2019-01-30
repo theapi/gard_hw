@@ -96,7 +96,7 @@ char tx_buffer[TXBUFFERSIZE];
 uint32_t last_blink = 0;
 /* tmp */
 uint8_t msg_id = 0;
-uint16_t water_temperature = 0;
+int16_t water_temperature = 0;
 
 /* USER CODE END 0 */
 
@@ -170,7 +170,7 @@ int main(void)
 			int tx_len = snprintf(
 			  tx_buffer,
 			  TXBUFFERSIZE,
-			  "msg_id:%d, batt:%u, temp:%u\n",
+			  "msg_id:%d, batt:%u, temp:%d\n",
 			  msg_id++,
 			  batt,
 			  water_temperature
