@@ -52,6 +52,7 @@
 
 #include "string.h"
 #include "stdio.h"
+#include "stdlib.h"
 
 #include "battery.h"
 #include "water.h"
@@ -96,7 +97,7 @@ char tx_buffer[TXBUFFERSIZE];
 uint32_t last_blink = 0;
 /* tmp */
 uint8_t msg_id = 0;
-int16_t water_temperature = 0;
+float water_temperature = 0;
 
 /* USER CODE END 0 */
 
@@ -166,14 +167,16 @@ int main(void)
 
 		  // Send data to debug UART.
 		  water_temperature = WATER_Temperature();
+		  char buf[100];
+		  gcvt(water_temperature, 6, buf);
 		  uint16_t batt = BATTERY_Mv();
 			int tx_len = snprintf(
 			  tx_buffer,
 			  TXBUFFERSIZE,
-			  "msg_id:%d, batt:%u, temp:%d\n",
+			  "msg_id:%d, batt:%u, temp:%s\n",
 			  msg_id++,
 			  batt,
-			  water_temperature
+			  buf
 			);
 			// Blocking UART.
 			HAL_UART_Transmit(&huart2, (uint8_t *)tx_buffer, tx_len, 500);
